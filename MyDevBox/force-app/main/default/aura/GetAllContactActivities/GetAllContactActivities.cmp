@@ -1,0 +1,39 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="GetAllContactActivities">
+		<aura:attribute name="simpleRecord" type="Object" />
+    <force:recordData aura:id="recordLoader"
+        layoutType="FULL"
+        recordId="{!v.recordId}"
+        targetRecord="{!v.simpleRecord}"
+        targetFields="{!v.simpleRecord}"
+        mode="VIEW" />
+    
+    <aura:attribute name="RelatedContactId" type="string" default="{!v.recordId}"/>
+    <aura:attribute name="AllActivity" type="Contact[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.getActivities}"/>
+    <div style="width: 100%; height: 100%;">
+        <aura:iteration items="{!v.AllActivity}" var="Allitem" indexVar="count">
+    	<div style="background: #fff; padding: 5px 5px 10px 0px;border-radius: 5px;">
+            <div style="padding: 10px 5px 0px 10px;">
+            <lightning:card class="ActivityBox" iconName="standard:recent" title="Open Activities">
+                <aura:iteration items="{!Allitem.OpenActivities}" var="Openitem" >
+                <div class="ItemContainer">
+                <div class="{! 'ItemContainer-details'+' '}" >
+                    <aura:if isTrue="{!Openitem.IsTask}">
+                    <p>Upcoming Task: <a target="_blank" href="{!'/lightning/r/'+Openitem.Id+'/view'}">{!Openitem.Subject} </a> on 
+                        <ui:outputDate value="{!Openitem.ActivityDate}"/>
+                        </p>
+                    </aura:if>
+                    <aura:if isTrue="{!Openitem.IsTask==False}">
+                      <p>Upcoming Event: <a target="_blank" href="{!'/lightning/r/'+Openitem.Id+'/view'}"> {!Openitem.Subject} </a> on 
+                        <ui:outputDate value="{!Openitem.ActivityDate}"/>
+                        </p>
+                      </aura:if>
+                 </div>
+                </div>
+                </aura:iteration>
+		</lightning:card>
+            </div>
+           </div>
+        </aura:iteration>
+    </div>
+</aura:component>

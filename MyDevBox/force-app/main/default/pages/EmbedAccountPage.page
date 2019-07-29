@@ -1,0 +1,5 @@
+<apex:page standardController="Account">
+ 
+  <h1>Hi {!$User.FirstName} </h1>
+  <marquee> Account Name :  {!Account.Name} </marquee> 
+</apex:page>

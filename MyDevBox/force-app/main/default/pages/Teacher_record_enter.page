@@ -1,0 +1,22 @@
+<apex:page controller="insert_teacher_record">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    Name:<apex:inputText value="{!t.name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    Salary:<apex:inputText value="{!t.Salary__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    Designation:<apex:inputText value="{!t.Designation__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageblockSectionItem >
+                    
+                    <apex:commandButton value="Submit" action="{!saveRecord}"/>
+                </apex:pageblockSectionItem> 
+             </apex:pageBlockSection>       
+        </apex:pageBlock>
+    </apex:form>
+      
+</apex:page>

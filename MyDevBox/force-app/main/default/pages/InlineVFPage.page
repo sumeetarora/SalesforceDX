@@ -1,0 +1,14 @@
+<apex:page standardController="Contact" extensions="InlineVFcontroller">
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:image value="{!name}"/>
+            <apex:inputFile value="{!att.body}" fileName="{!att.name}" contentType="{!att.contenttype}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save" action="{!save}"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>
+  
+</apex:page>

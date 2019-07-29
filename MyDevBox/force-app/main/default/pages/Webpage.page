@@ -1,0 +1,12 @@
+<apex:page >
+  <style>
+      h1,.par{color:red;
+      border : 2px black solid;
+      font-style:italic;
+      font-weight:bold;}
+  </style>
+  <!--<apex:stylesheet value="{!URLFOR($Resource.webpage,'web.css')}"/>-->
+  <h1>Congratulations</h1>
+  <p class="par">This is your new Page</p>
+  
+</apex:page>

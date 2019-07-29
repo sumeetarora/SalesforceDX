@@ -1,0 +1,20 @@
+<apex:page controller="StudentEmailsendController">
+<apex:form >
+
+    <apex:pageBlock >
+        
+        <apex:pageBlockTable value="{!md}" var="st">
+           <apex:column headerValue="Mark" width="30px">
+                <apex:inputCheckbox value="{!st.flag}" onclick=""/>
+            </apex:column>
+            <apex:column value="{!st.stu.Sname__c}"></apex:column>
+            <apex:column value="{!st.stu.Sclass__c}"/>
+            <apex:column value="{!st.stu.Semail__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Send" action="{!send}"/>
+            <apex:commandButton value="SendTemplateEmail" action="{!sendemailtemplate}"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

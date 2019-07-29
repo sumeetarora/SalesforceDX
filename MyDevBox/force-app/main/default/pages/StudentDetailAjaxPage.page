@@ -1,0 +1,27 @@
+<apex:page controller="StudentDetailAjaxController" >
+<apex:form >
+    <apex:actionFunction name="change" action="{!change}" reRender="frm"/>
+    <apex:commandButton value="Delete" action="{!del}"/>
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!model}" var="st" id="frm">
+            <apex:column headerValue="Edit" width="30px">
+                <apex:inputCheckbox value="{!st.flag}" onclick="change();"/>
+            </apex:column>
+            <apex:column ><apex:outputLabel value="{!st.sno}"/></apex:column>
+            <apex:column >
+                <apex:outputLabel value="{!st.stu.Sname__c}" rendered="{!(!st.flag)}"/>
+                <apex:inputField value="{!st.stu.Sname__c}" rendered="{!st.flag}"/>
+            </apex:column>
+            <apex:column >
+                <apex:outputLabel value="{!st.stu.Sclass__c}" rendered="{!(!st.flag)}"/>
+                <apex:inputField value="{!st.stu.Sclass__c}" rendered="{!st.flag}"/>
+            </apex:column>
+            <apex:column >
+                <apex:outputLabel value="{!st.stu.Semail__c}" rendered="{!(!st.flag)}"/>
+                <apex:inputField value="{!st.stu.Semail__c}" rendered="{!st.flag}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+        
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

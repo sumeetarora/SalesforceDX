@@ -1,0 +1,17 @@
+<apex:page controller="exampleCon">
+    <apex:form >
+        <apex:outputText value="Watch this counter: {!count}" id="counter"/>
+       
+       <!--<apex:actionStatus id="counterStatus"  >
+                <apex:facet name="start" >
+                  <img src="/img/loading.gif" />                    
+                </apex:facet>
+        </apex:actionStatus>-->
+   
+        <apex:actionPoller action="{!incrementCounter}" rerender="counter"
+            status="counterStatus" interval="5"/>
+        
+        
+        
+    </apex:form>
+</apex:page>

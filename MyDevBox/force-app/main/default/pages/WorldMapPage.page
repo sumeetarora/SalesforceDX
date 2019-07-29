@@ -1,0 +1,19 @@
+<apex:page controller="WorldController">
+<apex:form >
+   <apex:pageBlock >
+         <apex:pageBlockSection columns="5">
+            
+             <apex:selectList label="Countries" size="1" value="{!selectedCountry}">
+                 <apex:selectOptions value="{!Countries}" />
+                 <apex:actionSupport event="onchange" action="{!DoMapCountryWithStates}" reRender="stateId"/>
+             </apex:selectList>            
+             
+                 
+             <apex:selectList id="stateId" label="States" size="1" value="{!selectedState}">
+                 <apex:selectOptions value="{!states}"/>
+             </apex:selectList> 
+         
+         </apex:pageBlockSection>  
+   </apex:pageBlock>
+   </apex:form>
+</apex:page>

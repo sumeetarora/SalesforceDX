@@ -1,0 +1,13 @@
+<apex:page controller="StudentCountClassController" >
+<apex:form >
+<apex:pageBlock >
+    
+    <apex:repeat value="{!Models}" var="dirKey">
+        <apex:outputText value="{!dirKey.classname}---"/> 
+        <apex:outputText value="{!dirKey.count}" /><br/>
+    </apex:repeat>
+    
+    
+</apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page controller="StudentEditController" >
+  <apex:form >
+      <apex:pageBlock >
+      <apex:pageBlockTable value="{!stList}" var="st">
+          <apex:column ><apex:inputField value="{!st.Sname__c}" required="false"/></apex:column>
+          <apex:column ><apex:inputField value="{!st.Sclass__c}" required="false"/></apex:column>
+          <apex:column ><apex:inputField value="{!st.Semail__c}" required="false"/></apex:column>
+      </apex:pageBlockTable>
+          <apex:pageBlockButtons >
+              <apex:commandButton value="Update" action="{!saveall}"/>
+              <apex:commandButton value="AddRow" action="{!addrow}"/>
+              <apex:commandButton value="Delete" action="{!myDelete}"/>
+          </apex:pageBlockButtons>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

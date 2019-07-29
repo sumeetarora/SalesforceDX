@@ -1,0 +1,13 @@
+<apex:page controller="StudentDetailController">
+<apex:form >
+    <apex:pageBlock >
+        <apex:commandButton value="Edit" action="{!edit}"/>
+        <apex:pageBlockTable value="{!stList}" var="st">
+            <apex:column value="{!st.Sname__c}"/>
+            <apex:column value="{!st.Sclass__c}"/>
+            <apex:column value="{!st.Semail__c}"/>
+        </apex:pageBlockTable>
+        
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

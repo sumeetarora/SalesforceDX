@@ -1,0 +1,4 @@
+<apex:page controller="ContactForm">
+    Hello 
+    
+</apex:page>

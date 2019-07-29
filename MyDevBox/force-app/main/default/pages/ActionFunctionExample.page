@@ -1,0 +1,17 @@
+<apex:page controller="ActionFunctionExample">
+<apex:form >
+<apex:PageBlock >
+    <apex:pageBlockSection >
+        <apex:selectList label="Picklist" style="" size="1" value="{!selectvalue}" onchange="operation()">
+            <apex:selectOptions value="{!listvalues}">
+                
+            </apex:selectOptions>
+        </apex:selectList>
+        <apex:actionFunction name="operation" action="{!getselectedval}" reRender="text"/>
+        
+            <apex:outputText id="text" label="Selected value " value=" {!selectval}"></apex:outputText>
+        
+    </apex:pageBlockSection>
+</apex:PageBlock>
+</apex:form>
+</apex:page>

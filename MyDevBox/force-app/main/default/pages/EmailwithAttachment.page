@@ -1,0 +1,12 @@
+<apex:page controller="EmailwithAttachmentController">
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection columns="3" >
+            <apex:inputField value="{!s.LastName}" />
+        
+            <apex:inputFile value="{!att.body}" fileName="{!att.name}" contentType="{!att.contenttype}"/>
+        </apex:pageBlockSection>
+        <apex:commandButton value="Save" action="{!save}"/>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>
